@@ -10,7 +10,7 @@ use syn::{
 
 struct Arg {
     name: Ident,
-    equal: Token![=],
+    _equal: Token![=],
     _brace_token: token::Paren,
     fields: Punctuated<Expr, Token![,]>,
 }
@@ -21,7 +21,7 @@ impl Parse for Arg {
 
         Ok(Arg {
             name: input.parse()?,
-            equal: input.parse()?,
+            _equal: input.parse()?,
             _brace_token: parenthesized!(content in input),
             fields: content.parse_terminated(Expr::parse, Token![,])?,
         })
