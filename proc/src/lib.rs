@@ -1,7 +1,7 @@
 use proc_macro::TokenStream;
 use quote::{format_ident, quote};
 use syn::{
-    Ident, ItemFn, Lit, Result, Token, parenthesized,
+    Expr, Ident, ItemFn, Result, Token, parenthesized,
     parse::{Parse, ParseStream},
     parse_macro_input,
     punctuated::Punctuated,
@@ -12,7 +12,7 @@ struct Arg {
     name: Ident,
     equal: Token![=],
     _brace_token: token::Paren,
-    fields: Punctuated<Lit, Token![,]>,
+    fields: Punctuated<Expr, Token![,]>,
 }
 
 impl Parse for Arg {
@@ -23,7 +23,7 @@ impl Parse for Arg {
             name: input.parse()?,
             equal: input.parse()?,
             _brace_token: parenthesized!(content in input),
-            fields: content.parse_terminated(Lit::parse, Token![,])?,
+            fields: content.parse_terminated(Expr::parse, Token![,])?,
         })
     }
 }

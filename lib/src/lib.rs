@@ -17,3 +17,12 @@ fn add_on(input: u64, output: u64) {
 fn empty(input: &str, pass: bool) {
     assert_eq!(pass, input.is_empty())
 }
+
+#[paramtest(
+    test1=(None, false),
+    test2=(Some("hello"), true),
+    test3=(Some("world"), true),
+)]
+fn has_value(input: Option<&str>, pass: bool) {
+    assert_eq!(pass, input.is_some())
+}
