@@ -3,14 +3,14 @@
 version = 4
 
 [[package]]
-name = "paramtest"
+name = "lib"
 version = "0.1.0"
 dependencies = [
- "proc",
+ "paramtest",
 ]
 
 [[package]]
-name = "proc"
+name = "paramtest"
 version = "0.1.0"
 dependencies = [
  "quote",

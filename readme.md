@@ -7,7 +7,7 @@ With `paramtest`, you can define multiple sets of input values for a single test
 Here's how you can use `paramtest` in your tests:
 
 ```rust
-use proc::paramtest;
+use paramtest::paramtest;
 
 #[paramtest(
     one=(1, 2),

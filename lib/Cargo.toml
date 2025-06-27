@@ -1,5 +1,5 @@
 [package]
-name = "paramtest"
+name = "lib"
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
@@ -7,4 +7,4 @@ repository = "https://github.com/simonhdickson/paramtest"
 authors = ["Simon Dickson <683945+simonhdickson@users.noreply.github.com>"]
 
 [dependencies]
-proc = { path = "../proc" }
+paramtest = { path = "../proc" }

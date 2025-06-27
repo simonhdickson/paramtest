@@ -1,4 +1,4 @@
-use proc::paramtest;
+use paramtest::paramtest;
 
 #[paramtest(
     one=(1, 2),
