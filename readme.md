@@ -46,7 +46,7 @@ Each `#[paramtest(...)]` attribute defines named test cases with their own argum
 
 ## Tokio Support
 
-Tokio support is enabled by default. If you want to disable it, you can add the `tokio` feature to your `Cargo.toml`:
+Tokio support is disabled by default. If you want to enable it, you can add the `tokio` feature to your `Cargo.toml`:
 
 ```toml
 [dependencies]
