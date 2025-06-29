@@ -44,6 +44,29 @@ fn add_one(input: u64, output: u64) {
 
 Each `#[paramtest(...)]` attribute defines named test cases with their own arguments. The macro will generate a separate test for each case, making your tests concise and easy to maintain.
 
+## Tokio Support
+
+Tokio support is enabled by default. If you want to disable it, you can add the `tokio` feature to your `Cargo.toml`:
+
+```toml
+[dependencies]
+paramtest = { path = "../proc", features = ["tokio"] }
+tokio = { version = "1.45.1", features = ["macros", "rt"] }
+```
+
+And use the `#[tokio_paramtest]` attribute for your test functions:
+
+```rust
+#[tokio_paramtest(
+    one=(1, 2),
+    two=(2, 3),
+    hundred=(100, 101),
+)]
+async fn add_one(input: u64, output: u64) {
+    assert_eq!(output, input + 1)
+}
+```
+
 ## Usage
 
 1. Add`paramtest` crate as a dependency in your `Cargo.toml`.

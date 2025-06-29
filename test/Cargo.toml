@@ -1,0 +1,8 @@
+[package]
+name = "test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+paramtest = { path = "../proc", features = ["tokio"] }
+tokio = { version = "1.45.1", features = ["macros", "rt"] }
