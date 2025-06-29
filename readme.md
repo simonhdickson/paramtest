@@ -50,7 +50,7 @@ Tokio support is disabled by default. If you want to enable it, you can add the 
 
 ```toml
 [dependencies]
-paramtest = { path = "../proc", features = ["tokio"] }
+paramtest = { version = "0.1.2", features = ["tokio"] }
 tokio = { version = "1.45.1", features = ["macros", "rt"] }
 ```
 
