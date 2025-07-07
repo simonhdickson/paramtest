@@ -5,4 +5,4 @@ edition = "2024"
 
 [dependencies]
 paramtest = { path = "../proc", features = ["tokio"] }
-tokio = { version = "1.45.1", features = ["macros", "rt"] }
+tokio = { version = "1.46.1", features = ["macros", "rt"] }
